@@ -189,9 +189,9 @@ export default function About() {
         </div>
       </section>
 
-      {/* 会社概要セクション */}
-      <section className="relative py-32 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-        <div className="absolute inset-0 section-pattern opacity-10"></div>
+      {/* 代表挨拶 */}
+      <section className="relative py-32 bg-gradient-to-br from-lime-50 to-lime-100 overflow-hidden">
+        <div className="absolute inset-0 section-pattern opacity-5"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
@@ -201,81 +201,380 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
-              会社概要
+            <div className="flex items-center justify-center mb-6">
+              <div className="w-16 h-[2px] bg-lime-600 mr-4"></div>
+              <span className="font-english text-sm md:text-base tracking-[0.2em] text-lime-600 font-medium">CEO MESSAGE</span>
+              <div className="w-16 h-[2px] bg-lime-600 ml-4"></div>
+            </div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900 mb-6">
+              代表挨拶
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              昭和52年の創業以来、八幡平市を中心とした岩手県内で型枠工事・建設工事を専門とし、
-              地域の皆様から支えられながら成長してまいりました。
+            <p className="text-xl md:text-2xl text-gray-700 font-serif font-medium">
+              地域に貢献し、社員と共に成長し続ける企業へ
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* 左：会社情報 */}
-            <motion.div 
-              className="space-y-12"
-              initial={{ opacity: 0, x: -50 }}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+            {/* 代表者写真 */}
+            <motion.div
+              className="lg:order-2"
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4">
-                  会社情報
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex">
-                    <span className="text-gray-600 font-medium w-24 shrink-0">会社名</span>
-                    <span className="text-gray-900 font-medium">有限会社藤喜建設</span>
+              <div className="relative">
+                <div className="overflow-hidden rounded-3xl shadow-2xl">
+                  <img 
+                    src="/images/職長１_edited.png" 
+                    alt="代表取締役 工藤伸元" 
+                    className="w-full h-[600px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                </div>
+                {/* フローティングネームカード */}
+                <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl">
+                  <h3 className="text-2xl font-serif font-bold text-gray-900 mb-2">工藤 伸元</h3>
+                  <p className="text-lime-700 font-semibold mb-2">代表取締役</p>
+                  <div className="flex items-center text-gray-600 text-sm">
+                    <span className="bg-lime-100 text-lime-700 px-3 py-1 rounded-full font-medium">2022年就任</span>
+                    <span className="mx-3 text-gray-400">•</span>
+                    <span>第三代目代表</span>
                   </div>
-                  <div className="flex">
-                    <span className="text-gray-600 font-medium w-24 shrink-0">創業</span>
-                    <span className="text-gray-900">昭和52年（1977年）</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* 代表挨拶文 */}
+            <motion.div
+              className="lg:order-1"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative">
+                {/* 引用符のデザイン要素 */}
+                <div className="absolute -top-4 -left-4 text-8xl text-lime-200 font-serif opacity-50">"</div>
+                
+                <div className="bg-white p-10 md:p-12 rounded-3xl shadow-xl border border-lime-100 relative z-10">
+                  <div className="space-y-6 text-gray-700 leading-loose text-lg">
+                    <p className="first-letter:text-5xl first-letter:font-serif first-letter:text-lime-600 first-letter:float-left first-letter:mr-3 first-letter:leading-none">
+                      有限会社藤喜建設のホームページにアクセスいただき、誠にありがとうございます。代表取締役の工藤伸元です。
+                    </p>
+                    <p>
+                      当社は1977年に私の祖父である工藤喜代美が創業して以来、48年以上にわたり、ここ岩手県八幡平市を拠点に建設業を営んでまいりました。『建築で生活を豊かに』という企業理念のもと、地域社会の発展に貢献すべく、一つひとつの仕事に誠実に取り組んでおります。
+                    </p>
+                    <p>
+                      2022年に代表取締役に就任し、創業から受け継がれる技術と信頼を大切にしながらも、時代の変化に対応した新しい挑戦を続けていく所存です。特に、これからの藤喜建設を担う人材の育成には力を入れており、社員一人ひとりが働きがいを感じ、成長できる環境づくりを目指しています。
+                    </p>
+                    <p className="font-medium text-gray-900">
+                      私たちの仕事は、人々の生活の基盤を創り、守るという大きな責任と誇りがあります。この想いに共感し、共に汗を流してくれる仲間を心からお待ちしています。今後とも変わらぬご支援とご鞭撻を賜りますよう、お願い申し上げます。
+                    </p>
                   </div>
-                  <div className="flex">
-                    <span className="text-gray-600 font-medium w-24 shrink-0">代表</span>
-                    <span className="text-gray-900">代表取締役 工藤伸元</span>
+                  
+                  {/* 署名 */}
+                  <div className="mt-8 text-right">
+                    <div className="inline-block">
+                      <p className="text-gray-600 text-sm mb-2">有限会社藤喜建設</p>
+                      <p className="text-2xl font-serif text-gray-900">代表取締役　工藤 伸元</p>
+                    </div>
                   </div>
-                  <div className="flex">
-                    <span className="text-gray-600 font-medium w-24 shrink-0">会長</span>
-                    <span className="text-gray-900">工藤喜代美（創業者）</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 企業理念 */}
+      <section className="relative py-32 bg-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="mb-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-[2px] bg-lime-600 mr-4"></div>
+                <span className="font-english text-sm md:text-base tracking-[0.2em] text-lime-600 font-medium">OUR PHILOSOPHY</span>
+                <div className="w-16 h-[2px] bg-lime-600 ml-4"></div>
+              </div>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900">
+                企業理念
+              </h2>
+            </div>
+          </motion.div>
+
+          <div className="max-w-6xl mx-auto">
+            {/* メイン理念 */}
+            <motion.div
+              className="relative mb-20"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-gradient-to-br from-lime-50 via-lime-100 to-green-100 p-16 md:p-20 rounded-3xl shadow-2xl relative overflow-hidden">
+                {/* 背景装飾 */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-lime-200 rounded-full blur-3xl opacity-30"></div>
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-200 rounded-full blur-3xl opacity-20"></div>
+                
+                <div className="relative z-10 text-center">
+                  <h3 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-lime-800 mb-12">
+                    建築で生活を豊かに
+                  </h3>
+                  <div className="max-w-4xl mx-auto">
+                    <p className="text-xl md:text-2xl text-gray-700 leading-loose font-serif">
+                      この言葉には、私たちが提供する建物や構造物が、
+                      お客様の生活や事業にプラスの影響を与え、
+                      より快適で、より安全で、より希望に満ちたものになるように、
+                      という願いが込められています。
+                    </p>
                   </div>
-                  <div className="flex">
-                    <span className="text-gray-600 font-medium w-24 shrink-0">所在地</span>
-                    <span className="text-gray-900">岩手県八幡平市田頭第32地割59</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* 理念の3つの柱 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <span className="text-3xl font-bold text-white">技</span>
+                </div>
+                <h4 className="text-2xl font-serif font-bold text-gray-900 mb-4 text-center">技術の研鑽</h4>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  常に最新の技術を学び、伝統の技と融合させ、より良い建築物を創造します。
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <span className="text-3xl font-bold text-white">心</span>
+                </div>
+                <h4 className="text-2xl font-serif font-bold text-gray-900 mb-4 text-center">真摯な姿勢</h4>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  お客様の声に耳を傾け、期待を超える価値を提供することを目指します。
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <span className="text-3xl font-bold text-white">絆</span>
+                </div>
+                <h4 className="text-2xl font-serif font-bold text-gray-900 mb-4 text-center">地域との絆</h4>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  地域社会と共に成長し、次世代へ繋がる価値を創造し続けます。
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 会社概要セクション */}
+      <section className="relative py-32 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+        <div className="absolute inset-0 section-pattern opacity-10"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            className="mb-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="grid grid-cols-12 gap-6">
+              <div className="col-span-12 lg:col-span-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 md:w-24 h-[2px] bg-lime-600 mr-4"></div>
+                  <span className="font-english text-sm md:text-base tracking-[0.2em] text-lime-600 font-medium">COMPANY OVERVIEW</span>
+                </div>
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900 mb-6 leading-[1.1]">
+                  会社概要
+                </h2>
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl">
+                  昭和52年の創業以来、八幡平市を中心とした岩手県内で
+                  型枠工事・建設工事を専門とし、地域の皆様から支えられながら成長してまいりました。
+                </p>
+              </div>
+              <div className="col-span-12 lg:col-span-4 flex lg:justify-end items-end">
+                <div className="text-right">
+                  <div className="text-6xl md:text-8xl font-serif font-bold text-lime-600/20">Since</div>
+                  <div className="text-4xl md:text-5xl font-serif font-bold text-gray-900 -mt-4">1977</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 詳細会社情報 - カード形式 */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="grid grid-cols-12 gap-8">
+              {/* メイン情報カード */}
+              <div className="col-span-12 lg:col-span-8">
+                <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+                  <div className="bg-gradient-to-r from-lime-600 to-lime-700 text-white p-8">
+                    <h3 className="text-2xl font-serif font-bold">会社詳細情報</h3>
                   </div>
-                  <div className="flex">
-                    <span className="text-gray-600 font-medium w-24 shrink-0">電話</span>
-                    <span className="text-gray-900">0195-76-4735</span>
-                  </div>
-                  <div className="flex">
-                    <span className="text-gray-600 font-medium w-24 shrink-0">FAX</span>
-                    <span className="text-gray-900">0195-76-5710</span>
-                  </div>
-                  <div className="flex">
-                    <span className="text-gray-600 font-medium w-24 shrink-0">事業内容</span>
-                    <span className="text-gray-900">建築工事・型枠工事</span>
+                  <div className="p-8 md:p-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-6">
+                        <div>
+                          <p className="text-sm text-gray-500 mb-1">正式社名</p>
+                          <p className="text-lg font-bold text-gray-900">有限会社藤喜建設</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500 mb-1">所在地</p>
+                          <p className="text-gray-900">
+                            〒028-7112<br />
+                            岩手県八幡平市田頭第32地割59
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500 mb-1">連絡先</p>
+                          <p className="text-gray-900">
+                            TEL: 0195-76-4735<br />
+                            FAX: 0195-76-5710
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500 mb-1">創業・設立</p>
+                          <p className="text-gray-900">
+                            創業: 1977年（昭和52年）<br />
+                            法人設立: 1990年（平成2年）
+                          </p>
+                        </div>
+                      </div>
+                      <div className="space-y-6">
+                        <div>
+                          <p className="text-sm text-gray-500 mb-1">資本金</p>
+                          <p className="text-lg font-bold text-gray-900">5,000,000円</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500 mb-1">代表取締役</p>
+                          <p className="text-lg font-bold text-gray-900">工藤 伸元</p>
+                          <p className="text-sm text-gray-600">2022年就任</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500 mb-1">従業員数</p>
+                          <p className="text-lg font-bold text-gray-900">13名</p>
+                          <p className="text-sm text-gray-600">経験豊富な専門チーム</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-gray-500 mb-1">建設業許可</p>
+                          <p className="text-sm text-gray-900">
+                            一般建設業許可<br />
+                            岩手県知事許可<br />
+                            (般-XX) 第007849号
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
+              {/* サイドカード */}
+              <div className="col-span-12 lg:col-span-4 space-y-8">
+                {/* 登録・許可業種 */}
+                <div className="bg-gradient-to-br from-lime-50 to-lime-100 p-6 rounded-2xl border border-lime-200">
+                  <h4 className="text-lg font-bold text-gray-900 mb-4">登録・許可業種</h4>
+                  <div className="space-y-2">
+                    <span className="inline-block bg-white text-lime-700 px-3 py-1 rounded-lg text-sm font-medium mr-2 mb-2">建築工事業</span>
+                    <span className="inline-block bg-white text-lime-700 px-3 py-1 rounded-lg text-sm font-medium mr-2 mb-2">大工工事業</span>
+                    <span className="inline-block bg-white text-lime-700 px-3 py-1 rounded-lg text-sm font-medium mr-2 mb-2">とび・土工工事業</span>
+                    <span className="inline-block bg-white text-lime-700 px-3 py-1 rounded-lg text-sm font-medium mr-2 mb-2">土木工事業</span>
+                    <span className="inline-block bg-white text-lime-700 px-3 py-1 rounded-lg text-sm font-medium mr-2 mb-2">舗装工事業</span>
+                  </div>
+                </div>
+
+                {/* 実績カウンター */}
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl border border-blue-200">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-blue-600">48</div>
+                      <div className="text-sm text-blue-700">年の歴史</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-blue-600">100+</div>
+                      <div className="text-sm text-blue-700">完成案件</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ビジュアル付き情報セクション */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* 左：会社の特徴 */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative">
+                <img 
+                  src="/images/本社写真２.jpg" 
+                  alt="藤喜建設本社" 
+                  className="w-full h-[400px] object-cover rounded-2xl shadow-xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <h3 className="text-2xl font-serif font-bold text-white mb-2">
+                    八幡平市に根ざして48年
+                  </h3>
+                  <p className="text-white/90">
+                    地域と共に成長し、信頼される企業として
+                  </p>
+                </div>
+              </div>
+
               {/* 行動基準 */}
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl border border-green-200">
-                <h3 className="text-2xl font-serif font-bold text-green-900 mb-6">
-                  行動基準
+              <div className="mt-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6">
+                  私たちの行動基準
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mt-3 mr-4 shrink-0"></div>
-                    <p className="text-green-800 font-medium">私たちは型枠を通して地域の礎をつくります</p>
+                  <div className="flex items-start group">
+                    <div className="w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 shrink-0 group-hover:scale-110 transition-transform">1</div>
+                    <p className="text-gray-700 font-medium">私たちは型枠を通して地域の礎をつくります</p>
                   </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mt-3 mr-4 shrink-0"></div>
-                    <p className="text-green-800 font-medium">私たちは人の喜びを作る為に技術を磨きます</p>
+                  <div className="flex items-start group">
+                    <div className="w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 shrink-0 group-hover:scale-110 transition-transform">2</div>
+                    <p className="text-gray-700 font-medium">私たちは人の喜びを作る為に技術を磨きます</p>
                   </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mt-3 mr-4 shrink-0"></div>
-                    <p className="text-green-800 font-medium">私たちは信頼に応えられる企業を目指します</p>
+                  <div className="flex items-start group">
+                    <div className="w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 shrink-0 group-hover:scale-110 transition-transform">3</div>
+                    <p className="text-gray-700 font-medium">私たちは信頼に応えられる企業を目指します</p>
                   </div>
                 </div>
               </div>
@@ -283,57 +582,61 @@ export default function About() {
 
             {/* 右：沿革・特徴 */}
             <motion.div 
-              className="space-y-12"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6 border-b border-gray-200 pb-4">
+              {/* 沿革タイムライン */}
+              <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg border border-gray-200 mb-8">
+                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-8">
                   沿革
                 </h3>
-                <div className="space-y-6">
-                  <div className="border-l-4 border-green-500 pl-6">
-                    <div className="text-lg font-bold text-green-600 mb-2">昭和52年（1977年）</div>
-                    <p className="text-gray-700">工藤喜代美により有限会社藤喜建設を創業</p>
-                  </div>
-                  <div className="border-l-4 border-green-400 pl-6">
-                    <div className="text-lg font-bold text-green-600 mb-2">平成時代〜</div>
-                    <p className="text-gray-700">岩手県内各地での建築・土木工事実績を積み重ね</p>
-                  </div>
-                  <div className="border-l-4 border-green-300 pl-6">
-                    <div className="text-lg font-bold text-green-600 mb-2">現在</div>
-                    <p className="text-gray-700">代表取締役 工藤伸元のもと、48年の実績と信頼を築く</p>
+                <div className="relative">
+                  <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-lime-300"></div>
+                  <div className="space-y-8">
+                    <div className="relative flex items-start">
+                      <div className="absolute left-8 w-4 h-4 bg-lime-500 rounded-full -translate-x-1/2 ring-4 ring-white"></div>
+                      <div className="ml-16">
+                        <div className="text-lg font-bold text-lime-600">1977年</div>
+                        <p className="text-gray-700 mt-1">工藤喜代美により創業</p>
+                      </div>
+                    </div>
+                    <div className="relative flex items-start">
+                      <div className="absolute left-8 w-4 h-4 bg-lime-500 rounded-full -translate-x-1/2 ring-4 ring-white"></div>
+                      <div className="ml-16">
+                        <div className="text-lg font-bold text-lime-600">1990年</div>
+                        <p className="text-gray-700 mt-1">有限会社藤喜建設として法人化</p>
+                      </div>
+                    </div>
+                    <div className="relative flex items-start">
+                      <div className="absolute left-8 w-4 h-4 bg-lime-500 rounded-full -translate-x-1/2 ring-4 ring-white"></div>
+                      <div className="ml-16">
+                        <div className="text-lg font-bold text-lime-600">2022年</div>
+                        <p className="text-gray-700 mt-1">工藤伸元が第三代目代表取締役に就任</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200">
-                <h3 className="text-2xl font-serif font-bold text-blue-900 mb-6">
-                  私たちの特徴
+              {/* 私たちの強み */}
+              <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl border border-orange-200">
+                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6">
+                  私たちの強み
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 shrink-0">1</div>
-                    <div>
-                      <h4 className="font-bold text-blue-800 mb-1">型枠工事の専門性</h4>
-                      <p className="text-blue-700 text-sm">建物の基礎となる型枠工事に特化し、高い技術力を維持</p>
-                    </div>
+                  <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl">
+                    <h4 className="font-bold text-orange-800 mb-2">型枠工事の専門技術</h4>
+                    <p className="text-orange-700 text-sm">48年の経験に裏打ちされた確かな技術力</p>
                   </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 shrink-0">2</div>
-                    <div>
-                      <h4 className="font-bold text-blue-800 mb-1">地域密着48年</h4>
-                      <p className="text-blue-700 text-sm">八幡平市を中心に、地域に根ざした建設会社として成長</p>
-                    </div>
+                  <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl">
+                    <h4 className="font-bold text-orange-800 mb-2">地域密着の信頼</h4>
+                    <p className="text-orange-700 text-sm">八幡平市と共に歩み続けた実績</p>
                   </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 shrink-0">3</div>
-                    <div>
-                      <h4 className="font-bold text-blue-800 mb-1">安全第一の施工</h4>
-                      <p className="text-blue-700 text-sm">安全第一を心掛け、事故・災害のない現場作りを徹底</p>
-                    </div>
+                  <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl">
+                    <h4 className="font-bold text-orange-800 mb-2">安全第一の施工</h4>
+                    <p className="text-orange-700 text-sm">事故ゼロを目指す徹底した安全管理</p>
                   </div>
                 </div>
               </div>
@@ -390,7 +693,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <img 
-                src="/images/生コン打設２.jpg" 
+                src="/images/生コン打設３.jpg" 
                 alt="生コン打設作業" 
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
@@ -481,41 +784,167 @@ export default function About() {
         </div>
       </section>
 
+      {/* アクセス情報 */}
+      <section className="relative py-32 bg-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center justify-center mb-6">
+              <div className="w-16 h-[2px] bg-lime-600 mr-4"></div>
+              <span className="font-english text-sm md:text-base tracking-[0.2em] text-lime-600 font-medium">ACCESS</span>
+              <div className="w-16 h-[2px] bg-lime-600 ml-4"></div>
+            </div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900 mb-6">
+              アクセス
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              岩手県八幡平市に本社を構え、地域密着でサービスを提供しています。
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
+            {/* 地図エリア */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl h-[500px] flex items-center justify-center shadow-xl overflow-hidden">
+                <div className="text-center text-gray-600">
+                  <div className="w-32 h-32 bg-white rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
+                    <span className="text-4xl font-serif font-bold text-lime-600">藤</span>
+                  </div>
+                  <p className="text-lg font-semibold">Google Map</p>
+                  <p className="text-sm text-gray-500 mt-2">（実装時にGoogle Maps埋め込み）</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* アクセス情報 */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="space-y-8">
+                {/* 所在地カード */}
+                <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                  <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6">会社所在地</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-sm text-gray-500 mb-1">住所</p>
+                      <p className="font-bold text-gray-900">〒028-7112</p>
+                      <p className="text-gray-900">岩手県八幡平市田頭第32地割59</p>
+                    </div>
+                    <div className="pt-4 border-t border-gray-200">
+                      <p className="text-sm text-gray-500 mb-2">お問い合わせ</p>
+                      <div className="space-y-2">
+                        <p className="text-gray-900">
+                          <span className="font-medium">TEL:</span> 0195-76-4735
+                        </p>
+                        <p className="text-gray-900">
+                          <span className="font-medium">FAX:</span> 0195-76-5710
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 交通アクセスカード */}
+                <div className="bg-gradient-to-br from-lime-50 to-lime-100 p-8 rounded-2xl border border-lime-200">
+                  <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6">交通アクセス</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-lime-500 rounded-full mt-2 mr-3 shrink-0"></div>
+                      <p className="text-gray-700">八幡平市中心部から車で約10分</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-lime-500 rounded-full mt-2 mr-3 shrink-0"></div>
+                      <p className="text-gray-700">盛岡ICから車で約30分</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="w-2 h-2 bg-lime-500 rounded-full mt-2 mr-3 shrink-0"></div>
+                      <p className="text-gray-700">駐車場完備（10台分）</p>
+                    </div>
+                  </div>
+                  <div className="mt-6 pt-6 border-t border-lime-300">
+                    <p className="text-sm text-gray-600">
+                      ※ご来社の際は事前にご連絡ください
+                    </p>
+                  </div>
+                </div>
+
+                {/* 営業時間 */}
+                <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                  <h4 className="font-bold text-gray-900 mb-3">営業時間</h4>
+                  <div className="space-y-2 text-gray-700">
+                    <p>月曜日〜金曜日: 8:00〜17:00</p>
+                    <p>土曜日: 8:00〜12:00</p>
+                    <p className="text-sm text-gray-500">日曜・祝日休業</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* お問い合わせセクション */}
-      <section className="relative py-24 bg-gradient-to-r from-green-600 to-green-700 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative py-32 bg-gradient-to-br from-lime-600 to-lime-700 overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        
+        {/* 装飾的な背景要素 */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-black/10 rounded-full blur-3xl"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
-            className="text-center"
+            className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-8">
               お気軽にお問い合わせください
             </h2>
-            <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-              型枠工事のことなら何でもご相談ください。48年の経験と実績でお応えします。
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed">
+              型枠工事・建築工事のことなら何でもご相談ください。
+              <br />48年の経験と実績でお応えします。
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a 
+              <motion.a 
                 href="tel:0195-76-4735"
-                className="inline-flex items-center px-8 py-4 bg-white text-green-600 font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300"
+                className="group relative inline-flex items-center justify-center px-10 py-5 bg-white text-lime-700 font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                0195-76-4735
-              </a>
-              <a 
+                <span className="text-2xl mr-3">📞</span>
+                <span>0195-76-4735</span>
+              </motion.a>
+              
+              <motion.a 
                 href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-green-600 transition-colors duration-300"
+                className="group relative inline-flex items-center justify-center px-10 py-5 bg-transparent border-2 border-white text-white font-bold text-lg rounded-xl hover:bg-white hover:text-lime-700 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 お問い合わせフォーム
-              </a>
+              </motion.a>
+            </div>
+
+            {/* 営業時間の補足 */}
+            <div className="mt-12 text-white/80">
+              <p className="text-sm">営業時間: 平日 8:00〜17:00 / 土曜 8:00〜12:00</p>
+              <p className="text-sm mt-1">※お急ぎの場合は時間外でもご相談ください</p>
             </div>
           </motion.div>
         </div>
