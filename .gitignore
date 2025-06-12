@@ -60,4 +60,16 @@ node_modules/
 # OS specific
 # Task files
 tasks.json
-tasks/ 
+tasks/
+
+# Large media files (>100MB) to avoid GitHub file size limits
+*.m4v
+*.mov
+*.mp4
+*.avi
+*.mkv
+*.webm
+# Large image files
+*.tiff
+*.bmp
+*.psd 
