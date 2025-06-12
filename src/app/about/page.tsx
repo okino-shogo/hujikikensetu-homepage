@@ -227,14 +227,14 @@ export default function About() {
                 
                 <div className="relative z-10 text-center">
                   <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-lime-800 mb-8 md:mb-12">
-                    建築で生活を豊かに
+                  　​人と地域を支え「喜び」をつくる
                   </h3>
                   <div className="max-w-4xl mx-auto">
                     <p className="text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed md:leading-loose font-serif">
-                      この言葉には、私たちが提供する建物や構造物が、
-                      お客様の生活や事業にプラスの影響を与え、
-                      より快適で、より安全で、より希望に満ちたものになるように、
-                      という願いが込められています。
+                      この言葉には、私たちが手がける一つひとつの型枠工事が、
+                      地域の方々の暮らしに安心と幸せをもたらし、
+                      完成した建物を通して多くの人の笑顔と喜びが生まれる、
+                      そんな価値ある仕事をしたいという想いが込められています。
                     </p>
                   </div>
                 </div>
