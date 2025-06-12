@@ -20,10 +20,9 @@ export default function Header() {
     { href: "/", label: "ホーム" },
     { href: "/about", label: "会社概要" },
     { href: "/work", label: "藤喜建設の仕事" },
-    { href: "/results", label: "施工実績" },
+    { href: "/projects", label: "施工実績" },
     { href: "/voices", label: "先輩社員の声" },
     { href: "/careers", label: "採用情報" },
-    { href: "/contact", label: "お問い合わせ" },
   ];
 
   return (
@@ -31,7 +30,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          : "bg-black/40 backdrop-blur-md"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-6">
@@ -51,6 +50,9 @@ export default function Header() {
                 className={`text-2xl font-bold transition-colors duration-300 ${
                   isScrolled ? "text-gray-800" : "text-white"
                 }`}
+                style={!isScrolled ? { 
+                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.6)' 
+                } : {}}
               >
                 藤喜建設
               </div>
@@ -58,6 +60,9 @@ export default function Header() {
                 className={`text-sm font-medium transition-colors duration-300 ${
                   isScrolled ? "text-lime-600" : "text-lime-300"
                 }`}
+                style={!isScrolled ? { 
+                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.6)' 
+                } : {}}
               >
                 FUJIKI CONSTRUCTION
               </div>
@@ -75,6 +80,9 @@ export default function Header() {
                     ? "text-gray-700 hover:text-lime-600"
                     : "text-white hover:text-lime-300"
                 } group`}
+                style={!isScrolled ? { 
+                  textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.6)' 
+                } : {}}
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-lime-500 transition-all duration-300 group-hover:w-full"></span>
@@ -88,7 +96,7 @@ export default function Header() {
               href="/contact"
               className="bg-lime-500 hover:bg-lime-600 text-white px-6 py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
-              無料お見積り
+              お問い合わせ
             </Link>
           </div>
 
@@ -150,7 +158,7 @@ export default function Header() {
                 className="block w-full bg-lime-500 hover:bg-lime-600 text-white px-6 py-3 rounded-lg font-bold text-center transition-all duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                無料お見積り
+                お問い合わせ
               </Link>
             </div>
           </nav>

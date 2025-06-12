@@ -351,7 +351,7 @@ export default function ProjectsPage() {
                       創業以来
                     </motion.span>
                     <motion.span 
-                      className="block gradient-text bg-gradient-to-r from-lime-400 via-lime-500 to-lime-600 bg-clip-text text-transparent"
+                      className="block text-green-800 font-bold drop-shadow-lg shadow-white"
                       initial={{ opacity: 0, y: 50 }}
                       animate={isLoadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                       transition={{ duration: 0.8, delay: isLoadingComplete ? 0.6 : 0.9 }}

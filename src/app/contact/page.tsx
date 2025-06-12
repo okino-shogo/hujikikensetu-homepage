@@ -116,31 +116,52 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // フォーム送信処理をシミュレート
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    
-    // フォームリセット
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        projectType: "",
-        location: "",
-        budget: "",
-        timeline: "",
-        message: "",
-        age: "",
-        experience: "",
-        qualification: "",
-        motivation: ""
+    try {
+      // API呼び出しでメール送信
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType
+        }),
       });
-    }, 3000);
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        setSubmitted(true);
+        // フォームリセット
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            projectType: "",
+            location: "",
+            budget: "",
+            timeline: "",
+            message: "",
+            age: "",
+            experience: "",
+            qualification: "",
+            motivation: ""
+          });
+        }, 3000);
+      } else {
+        // エラー処理
+        alert(`送信エラー: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('送信エラー:', error);
+      alert('送信中にエラーが発生しました。しばらく時間をおいて再度お試しください。');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -160,7 +181,7 @@ export default function ContactPage() {
         >
           {/* 高品質オフィス・コミュニケーション写真 */}
           <img 
-            src="/images/現場写真３.jpg" 
+            src="/images/companyprofile_magic.png" 
             alt="建設現場での相談 - 藤喜建設" 
             className="w-full h-[130%] object-cover filter brightness-75 contrast-105"
           />
@@ -374,7 +395,7 @@ export default function ContactPage() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent transition-colors"
-                        placeholder="山田太郎"
+                        placeholder="工藤 伸元"
                       />
                     </div>
                     <div>
@@ -481,27 +502,70 @@ export default function ContactPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-12">
             {/* 地図 */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
+              className="lg:col-span-2"
             >
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <div className="aspect-w-16 aspect-h-12 bg-gray-200">
-                  <div className="flex items-center justify-center h-80">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-lime-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                        </svg>
+                <div className="relative">
+                  {/* Google Maps 埋め込み - サイズを大幅に拡大 */}
+                  <iframe
+                    src="https://maps.google.com/maps?q=39.9337129,141.0773120&hl=ja&z=15&output=embed"
+                    width="100%"
+                    height="500"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-[500px]"
+                  ></iframe>
+                  
+                  {/* 地図上のオーバーレイ情報 - コンパクトに調整 */}
+                  <div className="absolute top-4 right-4 max-w-xs">
+                    <div className="bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-lg border border-gray-200">
+                      <div className="flex items-center mb-2">
+                        <div className="w-8 h-8 bg-lime-600 rounded-full flex items-center justify-center mr-3">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-gray-900 text-sm">藤喜建設</h3>
+                          <p className="text-xs text-gray-600">岩手県八幡平市<br />田頭第３２地割５９</p>
+                        </div>
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">地図</h3>
-                      <p className="text-gray-600">
-                        岩手県八幡平市田頭第32地割59
-                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* 地図下部のアクションボタン */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex gap-2 justify-center">
+                                              <a
+                          href="https://maps.app.goo.gl/UAFHcQq7WDRvDB1t9?g_st=com.google.maps.preview.copy"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-lime-600 text-white text-sm font-medium rounded-lg hover:bg-lime-700 transition-colors duration-200 shadow-lg"
+                        >
+                        <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                        Google Mapで開く
+                      </a>
+                                              <button
+                          onClick={() => navigator.clipboard.writeText('岩手県八幡平市田頭第３２地割５９')}
+                          className="inline-flex items-center px-4 py-2 bg-white/95 backdrop-blur-sm text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+                        >
+                        <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
+                          <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
+                        </svg>
+                        住所をコピー
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -510,35 +574,39 @@ export default function ContactPage() {
 
             {/* アクセス詳細 */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-white p-6 rounded-xl shadow-md">
+                  <div className="w-12 h-12 bg-lime-600 rounded-full flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
                     交通アクセス
                   </h3>
                   <div className="space-y-3">
-                    <div className="flex items-start">
-                      <div className="w-2 h-2 bg-lime-500 rounded-full mt-3 mr-4 shrink-0"></div>
-                      <div>
-                        <p className="font-medium text-gray-900">JR花輪線・IGRいわて銀河鉄道</p>
-                        <p className="text-gray-600">好摩駅より車で約15分</p>
-                      </div>
+                    <div>
+                      <p className="font-medium text-gray-900 mb-1">JR花輪線・IGRいわて銀河鉄道</p>
+                      <p className="text-gray-600 text-sm">好摩駅より車で約15分</p>
                     </div>
-                    <div className="flex items-start">
-                      <div className="w-2 h-2 bg-lime-500 rounded-full mt-3 mr-4 shrink-0"></div>
-                      <div>
-                        <p className="font-medium text-gray-900">東北自動車道</p>
-                        <p className="text-gray-600">滝沢ICより車で約20分</p>
-                      </div>
+                    <div>
+                      <p className="font-medium text-gray-900 mb-1">東北自動車道</p>
+                      <p className="text-gray-600 text-sm">滝沢ICより車で約20分</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-xl shadow-md">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
                     対応エリア
                   </h3>
@@ -547,7 +615,7 @@ export default function ContactPage() {
                       <span className="font-medium">主要エリア：</span>
                       八幡平市を中心とした岩手県内
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-sm">
                       盛岡市、雫石町、葛巻町、岩手町、
                       一戸町、二戸市など県内全域に対応
                     </p>
@@ -555,10 +623,15 @@ export default function ContactPage() {
                 </div>
 
                 <div className="bg-lime-50 border border-lime-200 p-6 rounded-xl">
+                  <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                    </svg>
+                  </div>
                   <h3 className="text-xl font-bold text-lime-900 mb-4">
-                    工事エリア外でもご相談ください
+                    エリア外相談
                   </h3>
-                  <p className="text-lime-800">
+                  <p className="text-lime-800 text-sm">
                     地域に根ざした建設会社として、48年の実績とネットワークを活かし、
                     より広いエリアでのご相談も承っております。まずはお気軽にお問い合わせください。
                   </p>

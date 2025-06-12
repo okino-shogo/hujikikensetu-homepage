@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import LoadingProvider from "./components/LoadingProvider";
 import GoogleAnalytics from "./components/GoogleAnalytics";
+import StagewiseClientToolbar from "./components/StagewiseClientToolbar";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -145,6 +146,7 @@ export default function RootLayout({
       <body
         className={`${notoSansJP.variable} ${roboto.variable} font-sans antialiased`}
       >
+        <StagewiseClientToolbar />
         <LoadingProvider>
           <Header />
           {children}

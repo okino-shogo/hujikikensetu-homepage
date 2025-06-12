@@ -138,7 +138,7 @@ export default function ResultsPage() {
                       施工実績
                     </motion.span>
                     <motion.span 
-                      className="block text-4xl md:text-5xl lg:text-6xl mt-4 gradient-text bg-gradient-to-r from-purple-400 via-blue-500 to-green-600 bg-clip-text text-transparent"
+                      className="block text-4xl md:text-5xl lg:text-6xl mt-4 text-green-800 font-bold drop-shadow-lg shadow-white"
                       initial={{ opacity: 0, y: 50 }}
                       animate={isLoadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                       transition={{ duration: 0.8, delay: 0.6 }}

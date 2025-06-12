@@ -96,7 +96,7 @@ export default function CareersPage() {
                     </div>
                     <div className="relative py-2">
                       <motion.span 
-                        className="block gradient-text bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent"
+                        className="block text-green-800 font-bold drop-shadow-lg shadow-white"
                         initial={{ opacity: 0, y: 50 }}
                         animate={isLoadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                         transition={{ duration: 0.8, delay: isLoadingComplete ? 0.6 : 0.9 }}
@@ -105,7 +105,7 @@ export default function CareersPage() {
                         八幡平の未来
                       </motion.span>
                       <motion.div 
-                        className="absolute bottom-0 left-0 h-1 bg-orange-500"
+                        className="absolute bottom-0 left-0 h-1 bg-green-500"
                         initial={{ width: 0 }}
                         animate={isLoadingComplete ? { width: "100%" } : { width: 0 }}
                         transition={{ 
@@ -190,7 +190,7 @@ export default function CareersPage() {
               <div className="relative">
                 <div className="overflow-hidden rounded-3xl shadow-2xl">
                   <img 
-                    src="/images/職長２_edited.png" 
+                    src="/images/代表.jpg" 
                     alt="代表取締役 工藤伸元" 
                     className="w-full h-[600px] object-cover"
                   />
@@ -402,372 +402,266 @@ export default function CareersPage() {
             <h2 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
               募集要項
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              詳細な募集内容をご確認いただけます。
-              ご不明な点がございましたら、お気軽にお問い合わせください。
-            </p>
           </motion.div>
 
-          <div className="max-w-5xl mx-auto space-y-6">
-            {/* 型枠大工 */}
+          <div className="max-w-6xl mx-auto">
             <motion.div
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+              className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <button
-                onClick={() => toggleSection('katawaku')}
-                className="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between"
-              >
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">型枠大工</h3>
-                  <p className="text-gray-600">建築の基盤となる型枠工事のスペシャリスト</p>
-                </div>
-                <div className={`w-12 h-12 rounded-full ${openSection === 'katawaku' ? 'bg-orange-100' : 'bg-gray-100'} flex items-center justify-center transform transition-all duration-300`}>
-                  <div className={`w-6 h-0.5 bg-gray-600 transform transition-transform duration-300 ${openSection === 'katawaku' ? 'rotate-45' : ''}`}></div>
-                  <div className={`w-6 h-0.5 bg-gray-600 absolute transform transition-transform duration-300 ${openSection === 'katawaku' ? '-rotate-45' : 'rotate-90'}`}></div>
-                </div>
-              </button>
-              
-              {openSection === 'katawaku' && (
-                <div className="px-6 pb-6 border-t border-gray-100">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">仕事内容</h4>
-                        <p className="text-gray-700 text-sm">建築工事現場において、コンクリート構造物の型枠組立・解体作業、生コンクリート打設作業、その他付帯作業</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">応募資格</h4>
-                        <p className="text-gray-700 text-sm">未経験者歓迎・学歴不問・普通自動車免許取得推奨</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">雇用形態</h4>
-                        <p className="text-gray-700 text-sm">正社員</p>
-                      </div>
-                    </div>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">給与</h4>
-                        <p className="text-gray-700 text-sm">月給 184,000円～220,800円（経験・能力により決定）</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">勤務時間</h4>
-                        <p className="text-gray-700 text-sm">8:00～17:00（休憩100分）</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">休日</h4>
-                        <p className="text-gray-700 text-sm">週休2日制（第2・4土曜、日曜、祝日）、夏季・年末年始休暇</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </motion.div>
+              {/* 募集職種ヘッダー */}
+              <div className="bg-gradient-to-r from-orange-600 to-orange-700 text-white p-8 text-center">
+                <h3 className="text-3xl font-bold mb-2">募集職種</h3>
+                <p className="text-xl font-semibold">型枠大工</p>
+              </div>
 
-            {/* 建築施工管理 */}
-            <motion.div
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <button
-                onClick={() => toggleSection('kanri')}
-                className="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between"
-              >
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">建築施工管理</h3>
-                  <p className="text-gray-600">現場全体を統括する重要なポジション</p>
-                </div>
-                <div className={`w-12 h-12 rounded-full ${openSection === 'kanri' ? 'bg-orange-100' : 'bg-gray-100'} flex items-center justify-center transform transition-all duration-300`}>
-                  <div className={`w-6 h-0.5 bg-gray-600 transform transition-transform duration-300 ${openSection === 'kanri' ? 'rotate-45' : ''}`}></div>
-                  <div className={`w-6 h-0.5 bg-gray-600 absolute transform transition-transform duration-300 ${openSection === 'kanri' ? '-rotate-45' : 'rotate-90'}`}></div>
-                </div>
-              </button>
-              
-              {openSection === 'kanri' && (
-                <div className="px-6 pb-6 border-t border-gray-100">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">仕事内容</h4>
-                        <p className="text-gray-700 text-sm">工程管理、品質管理、安全管理、原価管理、図面作成、現場監督業務</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">応募資格</h4>
-                        <p className="text-gray-700 text-sm">建築系学科卒業者優遇・施工管理技士資格者優遇・普通自動車免許必須</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">雇用形態</h4>
-                        <p className="text-gray-700 text-sm">正社員</p>
-                      </div>
+              <div className="p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* 左列 */}
+                  <div className="space-y-6">
+                    {/* 業務内容 */}
+                    <div>
+                      <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">業務内容</h4>
+                      <p className="text-gray-700 leading-relaxed">型枠大工としての作業一式、その他運搬作業の補助や作業車両の運転及び操作等</p>
                     </div>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">給与</h4>
-                        <p className="text-gray-700 text-sm">月給 220,000円～280,000円（経験・資格により決定）</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">勤務時間</h4>
-                        <p className="text-gray-700 text-sm">8:00～17:00（現場により変動あり）</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">休日</h4>
-                        <p className="text-gray-700 text-sm">週休2日制（土日祝日）、夏季・年末年始休暇</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </motion.div>
 
-            {/* 土木作業員 */}
-            <motion.div
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <button
-                onClick={() => toggleSection('doboku')}
-                className="w-full p-6 text-left hover:bg-gray-50 transition-colors duration-300 flex items-center justify-between"
-              >
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">土木作業員</h3>
-                  <p className="text-gray-600">インフラ整備を支える重要な仕事</p>
-                </div>
-                <div className={`w-12 h-12 rounded-full ${openSection === 'doboku' ? 'bg-orange-100' : 'bg-gray-100'} flex items-center justify-center transform transition-all duration-300`}>
-                  <div className={`w-6 h-0.5 bg-gray-600 transform transition-transform duration-300 ${openSection === 'doboku' ? 'rotate-45' : ''}`}></div>
-                  <div className={`w-6 h-0.5 bg-gray-600 absolute transform transition-transform duration-300 ${openSection === 'doboku' ? '-rotate-45' : 'rotate-90'}`}></div>
-                </div>
-              </button>
-              
-              {openSection === 'doboku' && (
-                <div className="px-6 pb-6 border-t border-gray-100">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">仕事内容</h4>
-                        <p className="text-gray-700 text-sm">道路工事、河川工事、舗装工事、上下水道工事等の土木作業全般</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">応募資格</h4>
-                        <p className="text-gray-700 text-sm">未経験者歓迎・学歴不問・各種建設機械免許取得支援</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">雇用形態</h4>
-                        <p className="text-gray-700 text-sm">正社員</p>
+                    {/* 応募資格 */}
+                    <div>
+                      <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">応募資格</h4>
+                      <div className="space-y-2">
+                        <div>
+                          <p className="font-semibold text-gray-800">●新卒の方</p>
+                          <p className="text-gray-700 ml-4">令和８年卒業予定の高校生・短大・専門・大学生</p>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-800">●既卒・中途の方</p>
+                          <p className="text-gray-700 ml-4">18歳以上の方</p>
+                        </div>
                       </div>
                     </div>
-                    <div className="space-y-4">
+
+                    {/* 雇用形態・就業時間・休憩時間 */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-bold text-gray-900 mb-2">給与</h4>
-                        <p className="text-gray-700 text-sm">月給 180,000円～250,000円（経験・能力により決定）</p>
+                        <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">雇用形態</h4>
+                        <p className="text-gray-700">正社員</p>
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900 mb-2">勤務時間</h4>
-                        <p className="text-gray-700 text-sm">8:00～17:00（現場により変動あり）</p>
+                        <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">勤務地</h4>
+                        <p className="text-gray-700">本社加工場若しくは各工事現場</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">就業時間</h4>
+                        <p className="text-gray-700">8：00～17：00<br />※時間外勤務あり</p>
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900 mb-2">休日</h4>
-                        <p className="text-gray-700 text-sm">週休2日制（会社カレンダーによる）、夏季・年末年始休暇</p>
+                        <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">休憩時間</h4>
+                        <p className="text-gray-700">100分 ※昼休憩含む</p>
+                      </div>
+                    </div>
+
+                    {/* 資格・経験・スキル等 */}
+                    <div>
+                      <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">資格・経験・スキル等</h4>
+                      <p className="text-gray-700">不問　※但し普通自動車免許取得推奨</p>
+                    </div>
+                  </div>
+
+                  {/* 右列 */}
+                  <div className="space-y-6">
+                    {/* 給与 */}
+                    <div>
+                      <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">給与（日給制）</h4>
+                      <div className="space-y-3">
+                        <div>
+                          <p className="font-semibold text-gray-800">●新卒の方</p>
+                          <div className="text-gray-700 ml-4 space-y-1">
+                            <p>・高卒：￥184,000</p>
+                            <p>・短大・専門卒：￥202,400</p>
+                            <p>・大卒：￥220,800</p>
+                          </div>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-800">●既卒・中途の方</p>
+                          <p className="text-gray-700 ml-4">・￥184,000～（経験や資格により優遇）</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 待遇 */}
+                    <div>
+                      <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">待遇</h4>
+                      <div className="space-y-1 text-gray-700">
+                        <p>・各種手当有り（資格・役職・技能・通勤・住宅）</p>
+                        <p>・昇給：年1回</p>
+                        <p>・賞与：有り（業績により決定します）</p>
+                        <p>・社会保険（健康保険・厚生年金・雇用保険・労災保険）</p>
+                        <p>・建設業退職金共済加入</p>
+                      </div>
+                    </div>
+
+                    {/* 休日 */}
+                    <div>
+                      <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">休日</h4>
+                      <div className="space-y-1 text-gray-700">
+                        <p>・週休２日制（第２・４土曜、日曜、他当社カレンダーによる）</p>
+                        <p>・長期休暇有り（G.W、夏季休暇、年末年始）</p>
+                        <p>・入社６ヶ月経過後、年次有給休暇付与</p>
+                      </div>
+                    </div>
+
+                    {/* 福利厚生 */}
+                    <div>
+                      <h4 className="text-lg font-bold text-orange-600 mb-3 border-b border-orange-200 pb-2">福利厚生</h4>
+                      <div className="space-y-1 text-gray-700">
+                        <p>・業務に必要な資格取得の補助</p>
+                        <p>・宿泊施設利用補助、その他各種施設利用特典</p>
+                        <p>・関連団体主催の技能訓練への派遣</p>
+                        <p>・各種スキルアップに必要な研修・講習会への参加</p>
+                        <p>・作業服・ヘルメット・工具・安全具類の支給</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              )}
+
+                {/* 応募方法 */}
+                <div className="mt-8 pt-8 border-t border-gray-200">
+                  <h4 className="text-lg font-bold text-orange-600 mb-4 text-center">応募方法</h4>
+                  <div className="bg-orange-50 p-6 rounded-2xl">
+                    <div className="space-y-2 text-gray-700">
+                      <p>①各就職サイト（ハローワーク・キャリタスUC・indeed）からの応募</p>
+                      <p>②電話（0195－76－4735）での応募</p>
+                      <p>③当HPの問い合わせフォームでの応募</p>
+                    </div>
+                    <p className="mt-4 text-sm text-gray-600 text-right">担当：工藤</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
-
-          {/* 共通福利厚生 */}
-          <motion.div
-            className="max-w-5xl mx-auto mt-16 bg-gradient-to-br from-lime-50 to-lime-100 p-8 rounded-3xl border border-lime-200"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold text-lime-900 mb-6 text-center">共通福利厚生</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-3">
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-lime-600 rounded-full mt-3 mr-3 shrink-0"></div>
-                  <p className="text-lime-800">社会保険完備（健康・厚生年金・雇用・労災）</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-lime-600 rounded-full mt-3 mr-3 shrink-0"></div>
-                  <p className="text-lime-800">建設業退職金共済加入</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-lime-600 rounded-full mt-3 mr-3 shrink-0"></div>
-                  <p className="text-lime-800">各種手当（通勤・住宅・資格・技能・役職）</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-lime-600 rounded-full mt-3 mr-3 shrink-0"></div>
-                  <p className="text-lime-800">昇給年1回・賞与年1回（業績による）</p>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-lime-600 rounded-full mt-3 mr-3 shrink-0"></div>
-                  <p className="text-lime-800">有給休暇・慶弔休暇</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-lime-600 rounded-full mt-3 mr-3 shrink-0"></div>
-                  <p className="text-lime-800">資格取得費用全額補助</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-lime-600 rounded-full mt-3 mr-3 shrink-0"></div>
-                  <p className="text-lime-800">作業服等支給</p>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-lime-600 rounded-full mt-3 mr-3 shrink-0"></div>
-                  <p className="text-lime-800">技能訓練派遣・研修参加支援</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
-      {/* 応募方法・お問い合わせ */}
-      <section className="relative py-32 bg-gradient-to-br from-orange-600 to-orange-700 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        
-        {/* 装飾的な背景要素 */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-black/10 rounded-full blur-3xl"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
+      {/* お問い合わせへの遷移 */}
+      <section className="py-32 bg-gradient-to-br from-orange-50 to-orange-100">
+        <div className="container mx-auto px-4">
           <motion.div 
-            className="text-center"
+            className="text-center max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-[2px] bg-white/50 mr-4"></div>
-              <span className="font-english text-sm md:text-base tracking-[0.2em] text-white/80 font-medium">ENTRY & CONTACT</span>
-              <div className="w-16 h-[2px] bg-white/50 ml-4"></div>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-8">
-              応募・お問い合わせ方法
-            </h2>
-            <p className="text-xl md:text-2xl text-white/90 mb-16 max-w-3xl mx-auto leading-relaxed">
-              まずは会社見学からでも大歓迎！
-              <br />お気軽にご連絡ください。あなたの挑戦をお待ちしています。
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {/* エントリーフォーム */}
-              <motion.div 
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <div className="w-10 h-10 bg-white rounded-lg"></div>
-                </div>
-                <h3 className="text-2xl font-serif font-bold text-white mb-4">エントリーフォーム</h3>
-                <p className="text-white/80 mb-8 text-sm leading-relaxed">
-                  24時間受付中
-                  <br />オンラインで簡単応募
-                </p>
-                <button className="w-full bg-white text-orange-600 font-bold py-4 px-6 rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                  エントリーする
-                </button>
-              </motion.div>
-
-              {/* 電話応募 */}
-              <motion.div 
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <div className="w-3 h-12 bg-white rounded-full"></div>
-                </div>
-                <h3 className="text-2xl font-serif font-bold text-white mb-4">お電話でのご応募</h3>
-                <p className="text-white/80 mb-8 text-sm leading-relaxed">
-                  平日 8:00～17:00
-                  <br />採用担当まで
-                </p>
-                <a 
-                  href="tel:0195-76-4735"
-                  className="block w-full bg-white text-orange-600 font-bold py-4 px-6 rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl text-center"
-                >
-                  0195-76-4735
-                </a>
-              </motion.div>
-
-              {/* 会社見学 */}
-              <motion.div 
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <div className="grid grid-cols-2 gap-1">
-                    <div className="w-4 h-6 bg-white rounded-sm"></div>
-                    <div className="w-4 h-6 bg-white rounded-sm"></div>
-                    <div className="w-4 h-4 bg-white rounded-sm"></div>
-                    <div className="w-4 h-4 bg-white rounded-sm"></div>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-serif font-bold text-white mb-4">会社見学</h3>
-                <p className="text-white/80 mb-8 text-sm leading-relaxed">
-                  まずは職場を見てみたい
-                  <br />という方も大歓迎
-                </p>
-                <button className="w-full bg-white text-orange-600 font-bold py-4 px-6 rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl">
-                  見学申込み
-                </button>
-              </motion.div>
-            </div>
-
+            {/* セクションヘッダー */}
             <motion.div 
-              className="mt-16 bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 max-w-4xl mx-auto"
+              className="mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-xl font-serif font-bold text-white mb-4">選考プロセス</h4>
-              <div className="flex items-center justify-center space-x-4 text-white">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-xl font-bold">1</span>
-                  </div>
-                  <p className="text-sm">書類選考</p>
-                </div>
-                <div className="text-2xl">→</div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-xl font-bold">2</span>
-                  </div>
-                  <p className="text-sm">面接<br/>(1～2回)</p>
-                </div>
-                <div className="text-2xl">→</div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-xl font-bold">3</span>
-                  </div>
-                  <p className="text-sm">内定</p>
-                </div>
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-[2px] bg-orange-600 mr-4"></div>
+                <span className="font-english text-sm md:text-base tracking-[0.2em] text-orange-600 font-medium">CONTACT US</span>
+                <div className="w-16 h-[2px] bg-orange-600 ml-4"></div>
               </div>
-              <p className="mt-6 text-sm text-white/70 text-center">
-                ※応募書類は返却いたしません。個人情報は採用選考のみに使用いたします。
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900 mb-6">
+                あなたを
+                <span className="text-orange-600">お待ち</span>
+                しています
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-700 font-serif font-medium">
+                採用に関するご質問、エントリー、会社見学のお申し込みなど、
+                <br className="hidden md:block" />
+                どんなことでもお気軽にお問い合わせください。
               </p>
+            </motion.div>
+
+            {/* CTA ボタン */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <motion.a
+                href="/contact"
+                className="group bg-orange-600 hover:bg-orange-700 text-white text-lg font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="flex items-center">
+                  <span className="mr-3">お問い合わせはこちら</span>
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </motion.a>
+              
+              <motion.a
+                href="tel:0195-76-4735"
+                className="group flex items-center text-gray-700 hover:text-orange-600 transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="w-12 h-12 bg-white border-2 border-gray-300 group-hover:border-orange-600 rounded-full flex items-center justify-center mr-4 transition-all duration-300 shadow-md">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <p className="text-lg font-semibold">0195-76-4735</p>
+                </div>
+              </motion.a>
+            </motion.div>
+
+            {/* サポート情報 */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">会社見学</h4>
+                <p className="text-gray-600 text-sm">職場の雰囲気を確認していただけます</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">質問・相談</h4>
+                <p className="text-gray-600 text-sm">どんなことでもお気軽にご相談ください</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="w-12 h-12 bg-lime-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">エントリー</h4>
+                <p className="text-gray-600 text-sm">採用応募を受け付けております</p>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
     </main>
   );
-} 
+}
