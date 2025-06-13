@@ -12,7 +12,7 @@ export default function Home() {
   // 創業年から現在までの年数を計算
   const foundingYear = 1977;
   const currentYear = new Date().getFullYear();
-  const yearsInBusiness = currentYear - foundingYear;
+  const yearsInBusiness = 47; // 昭和52年（1977年）創業、47年の実績
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
