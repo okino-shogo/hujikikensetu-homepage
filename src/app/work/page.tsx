@@ -189,11 +189,7 @@ export default function WorkPage() {
               <p className="text-gray-700 leading-relaxed mb-6">
                 目に見えない基礎の部分から、仕上げの細部に至るまで。長年培ってきた技術と経験を結集し、お客様に心からご満足いただける高品質な仕上がりをお約束します。見えないところにこそ、私たちの誇りが宿ります。
               </p>
-              <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
-                <p className="text-blue-800 text-sm font-medium">
-                  💡 採用視点: 未経験からでも、先輩の丁寧な指導のもと、一生ものの技術を身につけられます。
-                </p>
-              </div>
+
             </motion.div>
 
             {/* こだわり2: 安全 */}
@@ -217,11 +213,7 @@ export default function WorkPage() {
               <p className="text-gray-700 leading-relaxed mb-6">
                 共に働く仲間、そして地域社会の安全を守ることは、私たちの最優先事項です。日々のKY活動（危険予知活動）、定期的な安全教育、最新の安全設備の導入など、安心して働ける環境づくりを徹底しています。安全なくして、良い仕事は生まれません。
               </p>
-              <div className="bg-green-50 p-4 rounded-xl border border-green-200">
-                <p className="text-green-800 text-sm font-medium">
-                  💡 採用視点: 安心して仕事に集中できる環境が、あなたの成長を後押しします。
-                </p>
-              </div>
+
             </motion.div>
 
             {/* こだわり3: 信頼関係 */}
@@ -245,11 +237,7 @@ export default function WorkPage() {
               <p className="text-gray-700 leading-relaxed mb-6">
                 お客様の想いを深く理解し、期待を超える提案をすること。そして、八幡平の地域社会の一員として、その発展に貢献すること。コミュニケーションを大切にし、長期的な信頼関係を築いていくことが、私たちの喜びです。
               </p>
-              <div className="bg-orange-50 p-4 rounded-xl border border-orange-200">
-                <p className="text-orange-800 text-sm font-medium">
-                  💡 採用視点: 人との繋がりを大切にする社風が、仕事のやりがいにも繋がります。
-                </p>
-              </div>
+
             </motion.div>
           </div>
         </div>

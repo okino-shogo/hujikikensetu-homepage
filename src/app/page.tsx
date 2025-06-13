@@ -139,7 +139,7 @@ export default function Home() {
                           transition={{ duration: 0.8, delay: isLoadingComplete ? 0.3 : 0.6 }}
                           style={{ transform: `translateY(${scrollY * -0.15}px)` }}
                         >
-                          型枠で
+                          人と地域を支え
                         </motion.span>
                         <motion.div 
                           className="absolute bottom-0 left-0 h-1 bg-white"
@@ -154,20 +154,25 @@ export default function Home() {
                       </div>
                       <div className="relative py-2">
                         <motion.span 
-                          className="block text-green-800 font-bold drop-shadow-lg shadow-white"
+                          className="block"
                           initial={{ opacity: 0, y: 50 }}
                           animate={isLoadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                           transition={{ duration: 0.8, delay: isLoadingComplete ? 0.6 : 0.9 }}
                           style={{ transform: `translateY(${scrollY * -0.2}px)` }}
                         >
-                          築く
+                          <span className="text-yellow-300 font-black drop-shadow-2xl shadow-orange-600 relative">
+                            「喜び」
+                            {/* 光るエフェクト */}
+                            <span className="absolute inset-0 text-yellow-300 blur-md opacity-60 animate-pulse">「喜び」</span>
+                          </span>
+                          <span className="text-lime-500 font-bold drop-shadow-lg shadow-white ml-4">をつくる</span>
                         </motion.span>
                         <motion.div 
-                          className="absolute bottom-0 left-0 h-1 bg-lime-500"
+                          className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-yellow-400 via-orange-400 to-lime-500"
                           initial={{ width: 0 }}
                           animate={isLoadingComplete ? { width: "100%" } : { width: 0 }}
                           transition={{ 
-                            duration: 0.8, 
+                            duration: 1.2, 
                             delay: isLoadingComplete ? 1.0 : 1.2, 
                             ease: "easeInOut" 
                           }}
@@ -525,11 +530,7 @@ export default function Home() {
                         <p className="text-xs text-gray-500 mt-1">Since 1977</p>
                       </div>
                       <div className="flex flex-col items-center">
-                        {/* 代表者の顔写真（プレースホルダー） */}
-                        <div className="w-24 h-24 bg-gradient-to-br from-lime-100 to-lime-200 rounded-full flex items-center justify-center mb-2 shadow-lg border-4 border-white">
-                          <span className="text-2xl font-serif font-bold text-lime-700">社長</span>
-                        </div>
-                        <p className="text-xs text-gray-500">※写真準備中</p>
+                        {/* 不要な要素（社長・写真準備中）は削除済み */}
                       </div>
                     </div>
                   </div>

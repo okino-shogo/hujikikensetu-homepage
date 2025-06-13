@@ -32,12 +32,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Nodemailerの設定
+    // Nodemailerの設定（ワクワクメール用）
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.wakwak.ne.jp',
+      port: 587,
+      secure: false, // STARTTLS
       auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD
+        user: process.env.WAKWAK_USER,
+        pass: process.env.WAKWAK_PASSWORD
       }
     });
 
@@ -85,8 +87,8 @@ ${message}
 
     // メール送信設定
     const mailOptions = {
-      from: process.env.GMAIL_USER,
-      to: 'okisho0106@gmail.com',
+      from: process.env.WAKWAK_USER,
+      to: 'fk.kensetsu@ai.wakwak.com',
       subject: `【藤喜建設HP】${formType === 'construction' ? '工事' : '採用'}に関するお問い合わせ - ${name}様`,
       text: emailContent,
       replyTo: email
