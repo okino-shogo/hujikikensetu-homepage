@@ -329,7 +329,7 @@ export default function ResultsPage() {
               viewport={{ once: true }}
             >
               <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl font-bold text-white">48</span>
+                <span className="text-4xl font-bold text-white">47</span>
               </div>
               <div className="text-2xl font-serif font-bold text-gray-900 mb-2">創業年数</div>
               <div className="text-gray-600">昭和52年創業</div>
