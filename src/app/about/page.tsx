@@ -640,7 +640,7 @@ export default function About() {
             >
               <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl border border-green-200">
                 <h3 className="text-2xl font-serif font-bold text-green-900 mb-6">
-                  48年で培った技術力
+                  47年で培った技術力
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start">

@@ -154,7 +154,7 @@ export default function ResultsPage() {
                   transition={{ duration: 0.8, delay: 1.2 }}
                 >
                   <p className="text-2xl md:text-3xl lg:text-4xl text-white/90 font-serif font-medium leading-relaxed">
-                    48年間で築き上げた確かな実績
+                    47年間で築き上げた確かな実績
                     <br className="hidden md:block" />
                     地域の発展に貢献する建築・土木工事
                   </p>
@@ -167,7 +167,7 @@ export default function ResultsPage() {
                   transition={{ duration: 0.8, delay: 1.5 }}
                 >
                   <div className="text-center">
-                    <div className="text-5xl md:text-6xl font-bold text-blue-400 mb-2">48年</div>
+                    <div className="text-5xl md:text-6xl font-bold text-blue-400 mb-2">47年</div>
                     <div className="text-lg text-white/80 font-medium">創業からの歩み</div>
                   </div>
                   <div className="text-center">
@@ -400,7 +400,7 @@ export default function ResultsPage() {
               <br />私たちにお任せください
             </h2>
             <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-              48年の実績と技術力で、お客様のご要望にお応えします。
+              47年の実績と技術力で、お客様のご要望にお応えします。
               <br />まずはお気軽にご相談ください。
             </p>
             

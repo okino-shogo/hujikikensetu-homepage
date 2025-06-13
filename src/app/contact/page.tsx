@@ -283,7 +283,7 @@ export default function ContactPage() {
                     会社情報
                   </h2>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    建築工事・型枠工事・土木工事のことなら、48年の実績を持つ藤喜建設にお任せください。
+                    建築工事・型枠工事・土木工事のことなら、47年の実績を持つ藤喜建設にお任せください。
                   </p>
                 </div>
 
@@ -632,7 +632,7 @@ export default function ContactPage() {
                     エリア外相談
                   </h3>
                   <p className="text-lime-800 text-sm">
-                    地域に根ざした建設会社として、48年の実績とネットワークを活かし、
+                    地域に根ざした建設会社として、47年の実績とネットワークを活かし、
                     より広いエリアでのご相談も承っております。まずはお気軽にお問い合わせください。
                   </p>
                 </div>
