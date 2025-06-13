@@ -376,33 +376,7 @@ export default function Home() {
 
                 </div>
 
-                {/* 会社の行動基準 */}
-                <motion.div 
-                  className="mt-12 bg-gradient-to-br from-lime-50 to-green-50 p-8 md:p-10 rounded-2xl"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <h3 className="text-2xl font-serif font-bold text-gray-900 mb-6 flex items-center">
-                    <span className="w-8 h-8 bg-lime-600 text-white rounded-full flex items-center justify-center text-sm font-sans mr-3">01</span>
-                    会社の行動基準
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start group">
-                      <div className="w-6 h-6 bg-lime-500 rounded-full mt-1 mr-4 shrink-0 group-hover:scale-110 transition-transform"></div>
-                      <p className="text-gray-700 font-medium leading-relaxed">私たちは型枠を通して地域の礎をつくります</p>
-                    </div>
-                    <div className="flex items-start group">
-                      <div className="w-6 h-6 bg-lime-500 rounded-full mt-1 mr-4 shrink-0 group-hover:scale-110 transition-transform"></div>
-                      <p className="text-gray-700 font-medium leading-relaxed">私たちは人の喜びを作る為に技術を磨きます</p>
-                    </div>
-                    <div className="flex items-start group">
-                      <div className="w-6 h-6 bg-lime-500 rounded-full mt-1 mr-4 shrink-0 group-hover:scale-110 transition-transform"></div>
-                      <p className="text-gray-700 font-medium leading-relaxed">私たちは信頼に応えられる企業を目指します</p>
-                    </div>
-                  </div>
-                </motion.div>
+
               </motion.div>
 
               {/* 右側：実績とストーリー */}
